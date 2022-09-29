@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <title>GGTaskManager</title>
+    <link rel="stylesheet" href="../../static/css/generalElements/general.css" th:rel="stylesheet"
+          th:href="@{/css/generalElements/general.css}">
+    <link rel="stylesheet" href="../../static/css/generalElements/signFormElements.css" th:rel="stylesheet"
+          th:href="@{/css/generalElements/signFormElements.css}">
+    <link rel="stylesheet" href="../../static/css/logInPage/main.css" th:rel="stylesheet"
+          th:href="@{/css/logInPage/main.css}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet"
+          th:href="@{https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700}" th:rel="stylesheet">
 </head>
-<body>
 
+<body>
+<!--<header th:replace="commonElements/header :: header"></header>-->
+<main id="main">
+    <div th:replace="logInPage/logInForm :: container"></div>
+
+</main>
 </body>
+<!--<footer th:replace="commonElements/footer :: footer">someFooter</footer>-->
 </html>

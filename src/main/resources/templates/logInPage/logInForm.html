@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>GGTaskManager</title>
+    <link rel="stylesheet" href="../../static/css/generalElements/general.css" th:rel="stylesheet"
+          th:href="@{/css/generalElements/general.css}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet"
+          th:href="@{https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700}"
+          th:rel="stylesheet">
+    <link rel="stylesheet" href="../../static/css/generalElements/signFormElements.css" th:rel="stylesheet"
+          th:href="@{/css/generalElements/signFormElements.css}">
+    <link rel="stylesheet" href="../../static/css/logInPage/main.css" th:rel="stylesheet"
+          th:href="@{/css/logInPage/main.css}">
+</head>
+
+<div class="container" th:fragment="container">
+    <form class="form-log-in" method="POST" th:action="@{/logInPage/index}">
+        <div class="form-heading" th:text="#{form.logInHeaderText}">Log in</div>
+
+        <div class="form-group">
+
+            <input name="username" type="text" class="form-control" placeholder="Username"
+                   th:placeholder="#{form.placeholderUsername}"
+                   autofocus="true"/>
+            <span th:text="${message}"></span>
+
+            <input name="password" type="password" class="form-control" placeholder="Password"
+                   th:placeholder="#{form.placeholderPassword}"/>
+            <span class="has-error" th:text="${error}"></span>
+
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+
+            <button id="log-in-button" class="btn btn-lg btn-primary btn-block" type="submit"
+                    th:text="#{form.logInButton}">Log In
+            </button>
+            <div id="register-text-div">
+                <div  th:text="#{form.betweenButtonText}">Don't have an account? </div>
+                <div>
+                    <a id="to-sign-up-button" th:href="@{../signUpPage/index}"
+                       th:text="#{form.toRegisterButton}"> Register!</a>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

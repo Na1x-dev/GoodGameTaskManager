@@ -42,15 +42,13 @@ public class I18NConfig extends WebMvcConfigurerAdapter {
         return slr;
     }
 
-
-
     @Bean
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
         messageSource.setCacheSeconds(5); //refresh cache once per 5 sec
         messageSource.setDefaultEncoding("UTF-8");
         messageSource.setFallbackToSystemLocale(false);
-        messageSource.setBasenames("classpath:/WEB-INF/validation", "classpath:/WEB-INF/logInPage", "classpath:/WEB-INF/signUpPage", "classpath:/WEB-INF/leftMenu", "classpath:/WEB-INF/list");
+        messageSource.setBasenames("classpath:/WEB-INF/validation", "classpath:/WEB-INF/logInPage", "classpath:/WEB-INF/signUpPage");
 //        System.out.println(messageSource.getBasenameSet());
         return messageSource;
     }

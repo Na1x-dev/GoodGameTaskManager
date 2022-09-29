@@ -26,18 +26,11 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    @Override
-    public User getUser(Long id) {
-        return userRepository.findUserById(id);
-    }
 
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
-    @Override
-    public Date getBirthDateByUsername(String username) {
-        return userRepository.findBirthDateByUsername(username);
-    }
+
 }

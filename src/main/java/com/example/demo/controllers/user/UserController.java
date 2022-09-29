@@ -41,7 +41,7 @@ public class UserController {
         }
         userService.create(userForm);
         securityService.autoLogin(userForm.getUsername(), userForm.getPasswordConfirm());
-        return "redirect:/receivedMessages/index";
+        return "redirect:/mainPage/index";
     }
 
     @GetMapping("/logInPage/index")
@@ -63,7 +63,12 @@ public class UserController {
 
     @GetMapping({"/"})
     public String startPage(Model model) {
-        return "redirect:receivedMessages/index";
+        return "redirect:mainPage/index";
+    }
+
+    @GetMapping("/mainPage/index")
+    public String mainPage(Model model) {
+        return "mainPage/index";
     }
 
 }

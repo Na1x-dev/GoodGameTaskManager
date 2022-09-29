@@ -24,15 +24,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "firstname")
-    @NonNull String firstname;
-
-    @Column(name = "lastname")
-    @NonNull String lastname;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "birth_date")
-    @NonNull Date birthDate;
-
     @Column(name = "username")
     @NonNull String username;
 

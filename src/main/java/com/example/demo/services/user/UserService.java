@@ -8,9 +8,6 @@ import java.util.List;
 public interface UserService {
     void create(User user);
 
-    User getUser(Long id);
     User findByUsername(String username);
 
-
-    Date getBirthDateByUsername(String username);
 }
