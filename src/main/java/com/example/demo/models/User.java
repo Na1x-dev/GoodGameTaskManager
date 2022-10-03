@@ -4,10 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.Objects;
 import java.util.Set;
 
 @JsonIdentityInfo(
@@ -15,7 +15,10 @@ import java.util.Set;
         property = "id")
 @Entity
 @Table(name = "users")
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer"})
 public class User {
@@ -31,11 +34,24 @@ public class User {
     @NonNull String password;
 
     @ManyToMany
-    @NonNull Set<Role> roles;
+    @NonNull
+    @ToString.Exclude
+    Set<Role> roles;
 
     @Transient
     @NonNull String passwordConfirm;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        User user = (User) o;
+        return id != null && Objects.equals(id, user.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
 

@@ -23,14 +23,11 @@
             <input name="username" type="text" class="form-control" placeholder="Username"
                    th:placeholder="#{form.placeholderUsername}"
                    autofocus="true"/>
-            <span th:text="${message}"></span>
 
             <input name="password" type="password" class="form-control" placeholder="Password"
                    th:placeholder="#{form.placeholderPassword}"/>
-            <span class="has-error" th:text="${error}"></span>
 
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-
 
             <button id="log-in-button" class="btn btn-lg btn-primary btn-block" type="submit"
                     th:text="#{form.logInButton}">Log In
@@ -44,4 +41,6 @@
             </div>
         </div>
     </form>
+<!--    <span th:text="${message}">some message</span>-->
+    <span class="has-error" th:text="${error}">some error error error error error error error error error error</span>
 </div>

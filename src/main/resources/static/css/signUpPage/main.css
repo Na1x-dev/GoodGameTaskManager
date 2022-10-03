@@ -1,13 +1,20 @@
-.container {
-    background-color: #222222;
+.container{
     width: 500px;
-    height: 435px;
-    border-radius: 5px;
+    height: 500px;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+}
+
+.form-sign-up {
+    /*background-color: #dddddd;*/
+    background-color: #222222;
+    width: 500px;
+    height: 435px;
+    border-radius: 5px;
+    position: absolute;
 }
 
 #sign-up-button {
@@ -36,8 +43,23 @@
     color: #dddddd;
 }
 
+.has-error{
+    color: #dddddd;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0;
+    margin-right: -50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
 #sign-up-button:hover{
     background-color: #c13f5e;
     color: #d9d9d9;
     cursor: pointer;
+}
+
+#to-log-in-button:hover {
+    margin-left: 5px;
+    color: #bbbbbb;
 }

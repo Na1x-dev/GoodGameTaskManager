@@ -71,4 +71,14 @@ public class UserController {
         return "mainPage/index";
     }
 
+    @GetMapping("/newTaskPage/index")
+    public String newTaskPage(Model model){
+        return "newTaskPage/index";
+    }
+
+    @GetMapping("/taskPage/index")
+    public String taskPage(Model model){
+        return "taskPage/index";
+    }
+
 }
