@@ -8,4 +8,5 @@ import java.util.Date;
 public interface UserJpaRepository extends JpaRepository<User, Long> {
     User findByUsername(String username);
 
+
 }

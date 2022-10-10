@@ -7,6 +7,7 @@ import lombok.*;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
@@ -40,6 +41,9 @@ public class User {
 
     @Transient
     @NonNull String passwordConfirm;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    List<Work> works;
 
     @Override
     public boolean equals(Object o) {

@@ -1,0 +1,140 @@
+/*.container {*/
+/*    padding-top: 100px;*/
+/*    background-color: #222222;*/
+/*    margin-left: auto;*/
+/*    margin-right: auto;*/
+/*    max-width: 1000px;*/
+/*    display: flex;*/
+/*    min-height: 100vh;*/
+
+/*}*/
+
+.panel{
+    width: 800px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color: #222222;
+    border-radius: 5px;
+}
+
+.container{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.fields-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 2000px;
+}
+
+.image-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    min-width: 250px;
+    height: 250px;
+    border-radius: 150px;
+    margin: 20px 30px 30px;
+}
+
+.name-field {
+    resize: none;
+}
+
+.description-field {
+    resize: none;
+}
+
+.text-field {
+    background-color: #333333;
+    border-radius: 5px;
+    border: 0;
+    margin: 10px 30px 10px 10px;
+    font-size: 25px;
+    padding: 10px;
+    color: #dddddd;
+}
+
+.text-field:hover, .image-area:hover {
+    background-color: #444444;
+}
+
+.image-area:hover {
+    cursor: pointer;
+}
+
+.create-work-button {
+    background-color: #e34a6f;
+    border-radius: 5px;
+    border: 0;
+    margin: 10px 30px 10px 10px;
+    font-size: 25px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.create-work-button:hover {
+    background-color: #c13f5e;
+    color: #dddddd;
+    cursor: pointer;
+}
+
+.image-replacement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.small-rectangle {
+    width: 70px;
+    height: 15px;
+    background-color: #444444;
+    border: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.big-rectangle {
+    height: 70px;
+    width: 120px;
+    background-color: #444444;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.round-into-big-rectangle {
+    background-color: #333333;
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    border: 0;
+}
+
+
+.image-area:hover .round-into-big-rectangle{
+    background-color: #444444;
+}
+
+.image-area:hover .big-rectangle, .image-area:hover .small-rectangle{
+    background-color: #555555;
+}
+
+.panel-text{
+    color: #dddddd;
+    font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

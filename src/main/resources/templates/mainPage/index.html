@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>GGTaskManager</title>
+    <title>GGworkManager</title>
     <link rel="stylesheet" href="../../static/css/generalElements/general.css" th:rel="stylesheet"
           th:href="@{/css/generalElements/general.css}">
     <link rel="stylesheet" href="../../static/css/mainPage/main.css" th:rel="stylesheet"
@@ -14,14 +16,16 @@
 <body>
 <!--<header th:replace="commonElements/header :: header"></header>-->
 <main id="main">
-    <div class="container">
-        <a class="task-button task-block" href="../taskPage/index.html" th:href="@{'../taskPage/index'}">
-            <div class="task-image">
-                <div class="task-image-replacement">T</div>
+    <div class="container" >
+        <th:block th:each="work : ${works}">
+        <a class="work-button work-block" href="../workPage/index.html" th:href="@{'../workPage/index/id='+${work.id}}">
+            <div class="work-image">
+                <div class="work-image-replacement" th:text="${work.workName.toUpperCase().charAt(0)}">T</div>
+<!--                .toUpperCase().charAt(0)-->
             </div>
-            <div class="task-text">
-                <div class="task-name">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-                <div class="task-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            <div class="work-text">
+                <div class="work-name" th:text="${work.workName}">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+                <div class="work-description" th:text="${work.workDescription}">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
                     printer
                     took a galley of type and scrambled it to make a type specimen book. It has survived not only five
@@ -32,60 +36,8 @@
                 </div>
             </div>
         </a>
-        <a class="task-button task-block" href="../taskPage/index.html" th:href="@{'../taskPage/index'}">
-<!--            th:href="@{'../taskPage/index/id='+${task.id}}"-->
-            <div class="task-image">
-                <div class="task-image-replacement">T</div>
-            </div>
-            <div class="task-text">
-                <div class="task-name">Task 2</div>
-                <div class="task-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-                    more
-                    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </div>
-            </div>
-        </a>
-        <a class="task-button task-block" href="../taskPage/index.html" th:href="@{'../taskPage/index'}">
-            <div class="task-image">
-                <div class="task-image-replacement">T</div>
-            </div>
-            <div class="task-text">
-                <div class="task-name">Task 3</div>
-                <div class="task-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-                    more
-                    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </div>
-            </div>
-        </a>
-        <a class="task-button task-block" href="../taskPage/index.html" th:href="@{'../taskPage/index'}">
-            <div class="task-image">
-                <div class="task-image-replacement">T</div>
-            </div>
-            <div class="task-text">
-                <div class="task-name">Task 4</div>
-                <div class="task-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                    printer
-                    took a galley of type and scrambled it to make a type specimen book. It has survived not only five
-                    centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-                    more
-                    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </div>
-            </div>
-        </a>
-
-        <a class="new-task-button task-block" href="../newTaskPage/index.html" th:href="@{'../newTaskPage/index'}">
+        </th:block>
+        <a class="new-work-button work-block" href="../newWorkPage/index.html" th:href="@{'../newWorkPage/index'}">
             <div class="add-symbol"></div>
         </a>
     </div>

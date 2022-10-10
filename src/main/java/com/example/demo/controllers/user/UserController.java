@@ -34,9 +34,9 @@ public class UserController {
     }
 
     @PostMapping("/signUpPage/index")
-    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResultUser) {
-        userValidator.validate(userForm, bindingResultUser);
-        if (bindingResultUser.hasErrors()) {
+    public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult) {
+        userValidator.validate(userForm, bindingResult);
+        if (bindingResult.hasErrors()) {
             return "signUpPage/index";
         }
         userService.create(userForm);
@@ -66,19 +66,15 @@ public class UserController {
         return "redirect:mainPage/index";
     }
 
-    @GetMapping("/mainPage/index")
-    public String mainPage(Model model) {
-        return "mainPage/index";
-    }
 
-    @GetMapping("/newTaskPage/index")
-    public String newTaskPage(Model model){
-        return "newTaskPage/index";
-    }
-
-    @GetMapping("/taskPage/index")
-    public String taskPage(Model model){
-        return "taskPage/index";
-    }
+//    @GetMapping("/newWorkPage/index")
+//    public String newWorkPage(Model model){
+//        return "newWorkPage/index";
+//    }
+//
+//    @GetMapping("/workPage/index")
+//    public String workPage(Model model){
+//        return "workPage/index";
+//    }
 
 }

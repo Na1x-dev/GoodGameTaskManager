@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GGTaskManager</title>
+    <link rel="stylesheet" href="../../static/css/generalElements/general.css" th:rel="stylesheet"
+          th:href="@{/css/generalElements/general.css}">
+    <link rel="stylesheet" href="../../static/css/newWorkPage/main.css" th:rel="stylesheet"
+          th:href="@{/css/newWorkPage/main.css}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700" rel="stylesheet"
+          th:href="@{https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700}"
+          th:rel="stylesheet">
+</head>
+<body>
+<!--<header th:replace="commonElements/header :: header"></header>-->
+<main id="main">
+<form class="panel" method="POST" th:action="@{'/newWorkPage/index'}" th:object="${newWork}">
+    <div class="panel-text">Create a new work</div>
+    <div class="container">
+        <div class="image-area">
+            <div class="image-replacement">
+                <div class="small-rectangle">
+                </div>
+                <div class="big-rectangle">
+                    <div class="round-into-big-rectangle">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="fields-container">
+            <textarea class="name-field text-field" rows="1" placeholder="Name of the work" th:field="${newWork.workName}"></textarea>
+            <textarea class="description-field text-field" rows="6" placeholder="Description of the work" th:field="*{workDescription}"></textarea>
+            <button type="submit" class="create-work-button">Create</button>
+        </div>
+        </div>
+    </form>
+</main>
+<!--<footer th:replace="commonElements/footer :: footer">someFooter</footer>-->
+</body>
+</html>

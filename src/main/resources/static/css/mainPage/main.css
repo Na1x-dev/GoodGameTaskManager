@@ -11,7 +11,7 @@
     min-height: 100vh;
 }
 
-.task-block {
+.work-block {
     border-radius: 5px;
     padding: 10px;
     font-size: 20px;
@@ -19,7 +19,7 @@
     background-color: #333333;
 }
 
-.task-block:hover {
+.work-block:hover {
     background-color: #444444;
     cursor: pointer;
 }
@@ -32,26 +32,28 @@
     clip-path: polygon(0% 45%, 45% 45%, 45% 0%, 55% 0%, 55% 45%, 100% 45%, 100% 55%, 55% 55%, 55% 100%, 45% 100%, 45% 55%, 0% 55%);
 }
 
-.new-task-button:hover .add-symbol {
+.new-work-button:hover .add-symbol {
     background-color: #555555;
 }
 
-.task-button:hover .task-image {
+.work-button:hover .work-image {
     background-color: #555555;
 }
 
-.task-button {
+.work-button {
     display: flex;
     text-decoration: none;
 }
 
-.task-text{
+.work-text{
+    text-align: right;
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr 2fr;
     margin: 10px 15px 5px 15px;
 }
 
-.task-image {
+.work-image {
     background-color: #444444;
     min-height: 100px;
     min-width: 100px;
@@ -63,7 +65,7 @@
     display: flex;
 }
 
-.task-name {
+.work-name {
     font-weight: 500;
     font-size: 25px;
     text-align: right;
@@ -74,7 +76,7 @@
     text-overflow: ellipsis;
 }
 
-.task-description{
+.work-description{
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
